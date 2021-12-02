@@ -86,7 +86,7 @@ async def pause(_, message: Message):
     for x in callsmusic.pytgcalls.active_calls:
         ACTV_CALLS(int(x.chat_id))
     if int(chat_id) not in ACTV_CALLS:
-        await message.reply_text("❌ **no music is currently playing**")
+        await message.reply_text("❌ **ga ada yg playing mekih**")
     else:
         await callsmusic.pytgcalls.pause_stream(chat_id)
         await message.reply_text(
@@ -125,7 +125,7 @@ async def stop(_, message: Message):
         except QueueEmpty:
             pass
         await callsmusic.pytgcalls.leave_group_call(chat_id)
-        await message.reply_text("✅ **music playback has ended**")
+        await message.reply_text("✅ **Req Yang Bener Bang**")
 
 
 @Client.on_message(command(["skip", f"skip@{BOT_USERNAME}", "next", f"next@{BOT_USERNAME}"]) & other_filters)
@@ -192,7 +192,7 @@ async def deautenticate(client, message):
             "🔴 user deauthorized.\n\nfrom now that's user can't use the admin commands."
         )
     else:
-        await message.reply("✅ user already deauthorized!")
+        await message.reply("✅ Genos already deauthorized!")
 
 
 # this is a anti cmd feature
@@ -331,6 +331,6 @@ async def change_volume(client, message):
     chat_id = message.chat.id
     try:
        await callsmusic.pytgcalls.change_volume_call(chat_id, volume=int(range))
-       await message.reply(f"✅ **volume set to:** ```{range}%```")
+       await message.reply(f"✅ **Genos : volume set to:** ```{range}%```")
     except Exception as e:
        await message.reply(f"**error:** {e}")
