@@ -506,7 +506,7 @@ async def play(_, message: Message):
     global useer
     if message.chat.id in DISABLED_GROUPS:
         return
-    lel = await message.reply("🔎 **searching...**")
+    lel = await message.reply("🔎 **Sabar bang lgi searching...**")
     administrators = await get_administrators(message.chat)
     chid = message.chat.id
     try:
@@ -522,7 +522,7 @@ async def play(_, message: Message):
             if administrator == message.from_user.id:
                 if message.chat.title.startswith("Channel Music: "):
                     await lel.edit(
-                        f"💡 **please add the userbot to your channel first.**",
+                        f"💡 **please add the babu to your channel first.**",
                     )
                 try:
                     invitelink = await _.export_chat_invite_link(chid)
@@ -536,14 +536,14 @@ async def play(_, message: Message):
                 try:
                     await USER.join_chat(invitelink)
                     await lel.edit(
-                        f"✅ **userbot succesfully entered chat**",
+                        f"✅ **Genos succesfully entered chat**",
                     )
                 except UserAlreadyParticipant:
                     pass
                 except Exception:
                     # print(e)
                     await lel.edit(
-                        f"🔴 **Flood Wait Error** 🔴 \n\n**userbot can't join this group due to many join requests for userbot.**"
+                        f"🔴 **eror gblg** 🔴 \n\n**userbot can't join this group due to many join requests for userbot.**"
                         f"\n\n**or add @{ASSISTANT_NAME} to this group manually then try again.**",
                     )
     try:
@@ -613,7 +613,7 @@ async def play(_, message: Message):
         )
     elif urls:
         query = toxt
-        await lel.edit("🔎 **searching...**")
+        await lel.edit("🔎 **Genos searching...**")
         ydl_opts = {"format": "bestaudio/best"}
         try:
             results = YoutubeSearch(query, max_results=1).to_dict()
@@ -673,7 +673,7 @@ async def play(_, message: Message):
             while j < 5:
                 toxxt += f"{emojilist[j]} [{results[j]['title'][:25]}...](https://youtube.com{results[j]['url_suffix']})\n"
                 toxxt += f" ├ 💡 **Duration** - `{results[j]['duration']}`\n"
-                toxxt += f" └ ⚡ __Powered by {BOT_NAME}__\n\n"
+                toxxt += f" └ ⚡ __Bot tampan by {BOT_NAME}__\n\n"
                 j += 1
             keyboard = InlineKeyboardMarkup(
                 [
@@ -975,7 +975,7 @@ async def ytplay(_, message: Message):
                 try:
                     await USER.join_chat(invitelink)
                     await lel.edit(
-                        f"✅ **userbot succesfully entered chat**",
+                        f"✅ **Genos succesfully entered chat**",
                     )
 
                 except UserAlreadyParticipant:
@@ -998,7 +998,7 @@ async def ytplay(_, message: Message):
     for i in message.command[1:]:
         query += " " + str(i)
     print(query)
-    await lel.edit("🔄 **connecting to vc...**")
+    await lel.edit("🔄 **Sabar Mekih connecting to vc...**")
     ydl_opts = {"format": "bestaudio/best"}
     try:
         results = YoutubeSearch(query, max_results=1).to_dict()
